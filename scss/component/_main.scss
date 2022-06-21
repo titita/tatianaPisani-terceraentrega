@@ -1,0 +1,118 @@
+@import "../base/listas";
+@import "../base/mixins";
+.containerFlex {
+	display: flex;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+.sectionOne {
+	width: 50%;
+	margin-left: 10px;
+	padding-right: 15px;
+	align-self: flex-start;
+	justify-content: flex-end;
+}
+.pic-ctn {
+	width: 50%;
+	position: relative;
+	display: flex;
+	align-self: flex-start;
+	flex-wrap: wrap;
+	>img {
+		position: absolute;
+		width: 60%;
+		left: calc(30% - 100px);
+		opacity: 0;
+		animation: display 10s infinite;
+	}
+}
+.cardSection {
+	margin-bottom: 15px;
+	.card-body {
+		background-size: cover;
+		background-position: center center;
+		margin: 0px 10px 0px 10px;
+
+
+		&:hover {
+			transform: translateY(-15px);
+			box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+		}
+		border-radius: 8px;
+		overflow: hidden;
+		text-align: center;
+		transition: all 0.25s;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.card-tittle {
+			h5.card-title {
+				font-weight: 600;
+			}
+			p.card-text {
+				padding: 0 1rem;
+				font-size: 16px;
+				font-weight: 300;
+			}
+		}
+		a {
+			font-weight: 500;
+			text-decoration: none;
+			color: nth($colores, 10);
+		}
+	}
+	.card-body#id-one {
+		background-image: url(../imagen/album.webp);
+	}
+	.card-body#id-two {
+		background-image: url(../imagen/mutek.webp);
+	}
+	.card-body#id-t {
+		background-image: url(../imagen/nota3.webp);
+	}
+}
+:root {
+	--background: #0a0a43;
+	--color: #FAFAFA;
+}
+.containertext1 {
+	@include display (flex, center, center);
+	color: var(--color);
+	font-size: 1.5rem;
+	flex-direction: column;
+	background: var(--background);
+	width: 100%;
+}
+.rightt {
+	text-align: right;
+	width: 30%;
+	padding: 1px;
+}
+.leftt {
+	text-align: left;
+	width: 30%;
+	padding: 1px;
+}
+.stack {
+	display: grid;
+	grid-template-columns: 1fr;
+	span {
+		font-weight: bold;
+		grid-row-start: 1;
+		grid-column-start: 1;
+		font-size: 3rem;
+		--stack-height: calc(100% / var(--stacks) - 1px);
+		--inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+		--clip-top: calc(var(--stack-height) * var(--index));
+		--clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+		clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+		animation: stack 340ms cubic-bezier(.46, .29, 0, 1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+		&:nth-child(odd) {
+			--glitch-translate: 8px;
+		}
+		&:nth-child(even) {
+			--glitch-translate: -8px;
+		}
+	}
+}

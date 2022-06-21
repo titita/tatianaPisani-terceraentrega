@@ -1,0 +1,13 @@
+@import "../base/listas";
+@import "../base/mixins";
+.nav-item {
+	a {
+		&:hover {
+			color: nth($colores, 2);
+		}
+	}
+}
+.logo {
+	@include tamaño (100%, auto);
+	max-width: 180px;
+}

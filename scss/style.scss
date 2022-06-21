@@ -1,0 +1,31 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:wght@100&family=Roboto+Flex:opsz,wght@8..144,300&family=Water+Brush&display=swap";
+@import "./base/listas";
+@import "./base/mixins";
+@import "./component/animated";
+@import "./component/footer";
+@import "./component/carousel";
+@import "./component/contact";
+@import "./component/main";
+@import "./component/nav";
+@import "./component/video";
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	box-sizing: border-box;
+	background-color: rgb(245, 245, 245);
+}
+html {
+	font-size: 18px;
+}
+
+* {
+	line-height: normal;
+	letter-spacing: normal;
+	box-sizing: border-box;
+}
+
+h2 {
+	font-size: 1.5rem;
+}

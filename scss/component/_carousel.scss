@@ -1,0 +1,38 @@
+
+img {
+	&:nth-child(2) {
+		animation-delay: 2s;
+	}
+	&:nth-child(3) {
+		animation-delay: 4s;
+	}
+	&:nth-child(4) {
+		animation-delay: 6s;
+	}
+	&:nth-child(5) {
+		animation-delay: 8s;
+	}
+}
+.imgCarousel {
+	div {
+		img {
+			max-height: 40vh;
+		}
+	}
+}
+@media screen and (max-width: 880px) {
+	.contact-box {
+		grid-template-columns: 1fr;
+	}
+	.left {
+		height: 200px;
+	}
+}
+@media (min-width: 600px) {
+	.wide {
+		grid-column: span 2;
+	}
+	.tall {
+		grid-row: span 2;
+	}
+}

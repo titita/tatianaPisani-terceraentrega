@@ -1,0 +1,10 @@
+@mixin display ($valor, $justify, $align){
+    display: $valor;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin tamaño ($w, $h){
+    width: $w;
+    height: $h;
+}
